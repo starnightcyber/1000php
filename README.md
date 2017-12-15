@@ -11,6 +11,12 @@
 
 ![image](https://raw.githubusercontent.com/starnightcyber/1000php/master/pic/bug.png)
 
+刚才试过了，直接打开index.html好像并不会简单按照我们的意愿显示，可以重新再执行一下代码：
+
+python script.py
+
+这样会重新生成index.html，在本地打开应该就没有问题，另外可能会出现乱码，可以用谷歌浏览器打开。
+
 说明
 ---
 * 数据取自3.8W乌云已公开漏洞(截至2016.7)
