@@ -27,7 +27,7 @@ def main():
             # print bug_id.strip(), '-', title.strip(), '--', f.strip()
 
         with open('index.html', 'a+') as fp:
-            bug = '编号: ' + bug_id.strip() + '&emsp;&emsp;' + '<a href="' + f.strip() + '">' + title.strip() + '</a></br>'
+            bug = '编号: '.encode('utf-8') + bug_id.strip() + '&emsp;&emsp;' + '<a href="' + f.strip() + '">' + title.strip() + '</a></br>'
             print bug
             fp.write(bug)
 
