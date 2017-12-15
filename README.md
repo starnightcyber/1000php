@@ -1,6 +1,12 @@
 # 1000php
 1000个PHP代码审计案例 (2016.7以前乌云公开漏洞)
 
+在原来的基础上(Xyntax/1000php)添加了简单的漏洞索引，方便查看
+
+## Sample
+
+![image](https://raw.githubusercontent.com/starnightcyber/1000php/master/pic/wooyun-index.png)
+
 说明
 ---
 * 数据取自3.8W乌云已公开漏洞(截至2016.7)
