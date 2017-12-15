@@ -7,6 +7,10 @@
 
 ![image](https://raw.githubusercontent.com/starnightcyber/1000php/master/pic/wooyun-index.png)
 
+点击其中某个漏洞，查看
+
+![image](https://raw.githubusercontent.com/starnightcyber/1000php/master/pic/bug.png)
+
 说明
 ---
 * 数据取自3.8W乌云已公开漏洞(截至2016.7)
