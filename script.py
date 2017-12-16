@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#! -*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 import glob
 import os
 from lxml import etree
@@ -20,18 +20,20 @@ def main():
             content = fp.read()
             selector = etree.HTML(content)      # 将源码转化为能被XPath匹配的格式
             #print selector
-            text = selector.xpath('//title/text()') #返回为一列表
-            # print text
-            bug_info = text[0]
-            title, bug_id, wooyun = bug_info.split('|')
-            # print bug_id.strip(), '-', title.strip(), '--', f.strip()
+            no = selector.xpath('//*[@id="bugDetail"]/div[@class="content"]/h3/a/text()')[0].strip() #返回为一列表
+            title = selector.xpath('//*[@id="bugDetail"]/div[@class="content"]/h3[@class="wybug_title"]/text()')[0][5:].strip() #返回为一列表
+            author = selector.xpath('//*[@id="bugDetail"]/div[@class="content"]/h3[@class="wybug_author"]/a/text()')[0].strip() #返回为一列表
 
-        with open('index.html', 'a+') as fp:
-            bug = '编号: '.encode('utf-8') + bug_id.strip() + '&emsp;&emsp;' + '<a href="' + f.strip() + '">' + title.strip() + '</a></br>'
-            print bug
-            fp.write(bug)
+            # print no, '-', title, '-', author
+            # bug = '编号: '.encode('utf-8') + bug_id.strip() + '&emsp;&emsp;' + '<a href="' + f.strip() + '">' + title.strip() + '</a></br>'
+            bug_info = no.strip() + '&emsp;&emsp;' + '<a href="' + f.strip() + '">' + title.strip() + '</a>' + '(' + author.strip() + ')</br>'
+            print bug_info
 
-    print '[*] Done ...'
+            with open('index.html', 'a+') as fp:
+                fp.write(bug_info)
+
+
+    print '[*] All Done!'
 
 if __name__ == '__main__':
     main()
